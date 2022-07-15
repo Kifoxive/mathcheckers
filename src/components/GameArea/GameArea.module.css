@@ -1,0 +1,28 @@
+.gameArea {
+  height: 60rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.gameArea .boardContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 40rem;
+  width: 40rem;
+  border: 3px solid #394a51;
+}
+.gameArea .boardContainer > div {
+  background-color: #394a51;
+}
+.gameArea .boardContainer > div:nth-child(-2n+8), .gameArea .boardContainer > div:nth-child(8) ~ div:nth-child(-2n+15), .gameArea .boardContainer > div:nth-child(16) ~ div:nth-child(-2n+24), .gameArea .boardContainer > div:nth-child(24) ~ div:nth-child(-2n+31), .gameArea .boardContainer > div:nth-child(32) ~ div:nth-child(-2n+40), .gameArea .boardContainer > div:nth-child(40) ~ div:nth-child(-2n+47), .gameArea .boardContainer > div:nth-child(48) ~ div:nth-child(-2n+56), .gameArea .boardContainer > div:nth-child(56) ~ div:nth-child(-2n+63) {
+  background-color: #fbf2d5;
+}

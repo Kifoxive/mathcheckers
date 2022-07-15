@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+
+$first-color: #394a51;
+$second-color: #7fa99b;
+$third-color: #fbf2d5;
+$fourth-color: #fdc57b;
+
+.mainWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  & div {
+    & h2 {
+      @keyframes textRotation {
+        from {
+          transform: rotate(-10deg);
+        }
+        70% {
+          font-size: 8rem;
+          transform: rotate(5deg);
+        }
+        to {
+          transform: rotate(0deg);
+        }
+      }
+      font-size: 7rem;
+      font-family: "Ubuntu", sans-serif;
+      color: $first-color;
+      transform: rotate(-10deg);
+      animation: textRotation 2s linear 1s 1 forwards;
+    }
+  }
+  & a {
+    padding: 20px;
+    position: relative;
+    width: 8rem;
+    background-color: $second-color;
+    border-radius: 1rem;
+    transition: 0.3s;
+    text-decoration: none;
+    & .button {
+      font-size: 3rem;
+      font-family: sans-serif;
+      text-transform: uppercase;
+      color: $fourth-color;
+    }
+    &:hover {
+      background-color: $first-color;
+    }
+    &:active {
+      transform: translateY(4px);
+      transition: 0.3s;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+.cellContainer {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 5rem;
+  width: 5rem;
+}
+.cellContainer .wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5rem;
+  width: 5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.cellContainer .wrapper.active {
+  opacity: 0.9;
+  background-color: #7fa99b !important;
+  border: 1px solid #394a51;
+}
+.cellContainer .wrapper.targetCell {
+  z-index: 5;
+  border: 0.4rem dashed red;
+}
+.cellContainer p.cellCode {
+  z-index: 5;
+  text-align: center;
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.cellContainer .checker {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  z-index: 5;
+}
+.cellContainer .checker.head {
+  background-color: cornflowerblue;
+}
+.cellContainer .checker.tail {
+  background-color: orange;
+}
+.cellContainer .checker p {
+  padding-bottom: 0.3rem;
+  font-size: 3rem;
+  color: #fbf2d5;
+}

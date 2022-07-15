@@ -1,0 +1,12 @@
+.container select {
+  width: 18rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: #7fa99b;
+  border: 0.5rem solid #394a51;
+  font-size: 2rem;
+}
+.container select:focus {
+  -webkit-box-shadow: 0 0 10px 0 #7fa99b;
+          box-shadow: 0 0 10px 0 #7fa99b;
+}
