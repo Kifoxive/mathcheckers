@@ -22,6 +22,7 @@ class Board {
       this.cells.push({
         cathegories: cathegories,
         number: binNum,
+        selected: false,
       })
     }
     this.createTargetCell()

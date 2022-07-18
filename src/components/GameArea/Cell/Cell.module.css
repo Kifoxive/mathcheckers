@@ -25,12 +25,15 @@
 }
 .cellContainer .wrapper.active {
   opacity: 0.9;
-  background-color: #7fa99b !important;
+  background-color: green;
   border: 1px solid #394a51;
 }
 .cellContainer .wrapper.targetCell {
   z-index: 5;
   border: 0.4rem dashed red;
+}
+.cellContainer .wrapper.selectedCell {
+  background-color: black;
 }
 .cellContainer p.cellCode {
   z-index: 5;

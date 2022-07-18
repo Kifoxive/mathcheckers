@@ -1,7 +1,8 @@
 // import React from "react"
 import { connect } from "react-redux"
 import GameArea from './GameArea';
-import { optionsOnChangeAC, showCheckersAC, showCodesAC, showTargetCellAC } from './../../redux/gameArea-reducer';
+import { optionsOnChange, showCheckers, showCodes, showTargetCell, writeBoardNumber, writeTargetCellNumber, selectCell, } from './../../redux/gameArea-reducer';
+import { } from './../../redux/gameArea-reducer';
 
 let mapStateToProps = (state) => {
    return {
@@ -13,29 +14,19 @@ let mapStateToProps = (state) => {
       allowToShowTargetCell: state.gameAreaPage.allowToShowTargetCell,
       showingTargetCell: state.gameAreaPage.showingTargetCell,
       cells: state.gameAreaPage.cells,
-   }
-}
-let mapDispatchToProps = (dispatch) => {
-   return {
-      optionsOnChange: (option) => {
-         let action = optionsOnChangeAC(option)
-         dispatch(action)
-      },
-      showCheckers: () => {
-         let action = showCheckersAC()
-         dispatch(action)
-      },
-      showCodes: () => {
-         let action = showCodesAC()
-         dispatch(action)
-      },
-      showTargetCell: (e) => {
-         let action = showTargetCellAC(e.target.checked)
-         dispatch(action)
-      }
+      boardNumber: state.gameAreaPage.boardNumber,
+      targetCellNumberNote: state.gameAreaPage.targetCellNumberNote,
    }
 }
 
-const GameAreaContainer = connect(mapStateToProps, mapDispatchToProps)(GameArea)
+const GameAreaContainer = connect(mapStateToProps, {
+   optionsOnChange,
+   showCheckers,
+   showCodes,
+   showTargetCell,
+   writeBoardNumber,
+   writeTargetCellNumber,
+   selectCell,
+})(GameArea)
 
 export default GameAreaContainer

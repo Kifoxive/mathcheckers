@@ -1,16 +1,20 @@
 import Board from "./../Board"
 
-const CHANGE_CATHEGORY = "CHANGE-CATHEGORY"
-const SHOW_CHECKERS = "SHOW-CHECKERS"
-const SHOW_CODES = "SHOW-CODES"
-const SHOW_TARGET_CELL = "SHOW-TARGET-CELL"
+const CHANGE_CATHEGORY = "CHANGE-CATHEGORY",
+  SHOW_CHECKERS = "SHOW-CHECKERS",
+  SHOW_CODES = "SHOW-CODES",
+  SHOW_TARGET_CELL = "SHOW-TARGET-CELL",
+  WRITE_BOARD_NUMBER = "WRITE-BOARD-NUMBER",
+  WRITE_TARGET_CELL_NUMBER = "WRITE-TARGET-CELL-NUMBER",
+  SELECT_CELL = "SELECT-CELL"
 
 let board = new Board()
 board.initial()
 
 let initialState = {
   targetCell: board.targetCell,
-  // boardCode: null,
+  targetCellNumberNote: "",
+  boardNumber: "",
   // flipCell: null,
   activeCathegory: "all",
   showingCheckers: true,
@@ -32,20 +36,47 @@ const gameAreaReducer = (state = initialState, action) => {
         ...state,
         showingTargetCell: action.showingTargetCell,
       }
+    case WRITE_BOARD_NUMBER:
+      return {
+        ...state,
+        boardNumber: action.number,
+      }
+    case WRITE_TARGET_CELL_NUMBER:
+      return {
+        ...state,
+        targetCellNumberNote: action.number,
+      }
+    case SELECT_CELL:
+      let newCells = [...state.cells]
+      newCells[action.cellIndex].selected = !newCells[action.cellIndex].selected
+      return {
+        ...state,
+        // cells: [...state.cells, ([action.cellIndex].selected = true)],
+        cells: newCells,
+      }
     default:
       return state
   }
 }
 
-export const optionsOnChangeAC = (option) => ({
+export const optionsOnChange = (option) => ({
   type: CHANGE_CATHEGORY,
-  option: option,
+  option,
 })
-export const showCheckersAC = () => ({ type: SHOW_CHECKERS })
-export const showCodesAC = () => ({ type: SHOW_CODES })
-export const showTargetCellAC = (showingTargetCell) => ({
+export const showCheckers = () => ({ type: SHOW_CHECKERS })
+export const showCodes = () => ({ type: SHOW_CODES })
+export const showTargetCell = (showingTargetCell) => ({
   type: SHOW_TARGET_CELL,
-  showingTargetCell: showingTargetCell,
+  showingTargetCell,
 })
+export const writeBoardNumber = (number) => ({
+  type: WRITE_BOARD_NUMBER,
+  number,
+})
+export const writeTargetCellNumber = (number) => ({
+  type: WRITE_TARGET_CELL_NUMBER,
+  number,
+})
+export const selectCell = (cellIndex) => ({ type: SELECT_CELL, cellIndex })
 
 export default gameAreaReducer
