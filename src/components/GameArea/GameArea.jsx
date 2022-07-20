@@ -5,7 +5,6 @@ import Cell from './Cell/Cell';
 import OptionsInput from './OptionsInput/OptionsInput';
 
 const GameArea = (props) => {
-
    let cells = props.cells.map((cell, index) => <Cell key={index} index={index}
       activeCathegory={cell.cathegories.includes(props.activeCathegory) ? true : false}
       showingTargetCell={props.showingTargetCell && props.allowToShowTargetCell}
@@ -34,8 +33,13 @@ const GameArea = (props) => {
          <div>
             <label htmlFor="targetCell" >Target cell: </label>
             <input onChange={(e) => props.writeTargetCellNumber(e.target.value)} value={props.targetCellNumberNote} type="number" id="targetCell"></input>
+
             <label htmlFor="boardNumber" >Board number: </label>
             <input onChange={(e) => props.writeBoardNumber(e.target.value)} value={props.boardNumber} type="number" id="boardNumber"></input>
+
+            <label htmlFor="cellToFlip">Flip the cell: </label>
+            <input onChange={(e) => props.writeCellToFlipNumber(e.target.value)} value={props.cellToFlipNumber} type="number" id="cellToFlip" />
+            <button onClick={() => props.flipCell()}>Flip</button>
          </div>
       </div>
    )

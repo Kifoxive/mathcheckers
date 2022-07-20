@@ -6,7 +6,9 @@ const CHANGE_CATHEGORY = "CHANGE-CATHEGORY",
   SHOW_TARGET_CELL = "SHOW-TARGET-CELL",
   WRITE_BOARD_NUMBER = "WRITE-BOARD-NUMBER",
   WRITE_TARGET_CELL_NUMBER = "WRITE-TARGET-CELL-NUMBER",
-  SELECT_CELL = "SELECT-CELL"
+  WRITE_CELL_TO_FLIP_NUMBER = "WRITE-CELL-TO-FLIP-NUMBER",
+  SELECT_CELL = "SELECT-CELL",
+  FLIP_CELL = "FLIP-CELL"
 
 let board = new Board()
 board.initial()
@@ -15,7 +17,7 @@ let initialState = {
   targetCell: board.targetCell,
   targetCellNumberNote: "",
   boardNumber: "",
-  // flipCell: null,
+  cellToFlipNumber: "",
   activeCathegory: "all",
   showingCheckers: true,
   allowToShowTargetCell: true,
@@ -46,6 +48,11 @@ const gameAreaReducer = (state = initialState, action) => {
         ...state,
         targetCellNumberNote: action.number,
       }
+    case WRITE_CELL_TO_FLIP_NUMBER:
+      return {
+        ...state,
+        cellToFlipNumber: action.number,
+      }
     case SELECT_CELL:
       let newCells = [...state.cells]
       newCells[action.cellIndex].selected = !newCells[action.cellIndex].selected
@@ -54,6 +61,19 @@ const gameAreaReducer = (state = initialState, action) => {
         // cells: [...state.cells, ([action.cellIndex].selected = true)],
         cells: newCells,
       }
+    case FLIP_CELL: {
+      let newCells = [...state.cells]
+      newCells.map((value) => {
+        if (value.number === state.cellToFlipNumber) {
+          value.role = value.role === "head" ? "tail" : "head"
+        }
+      })
+
+      return {
+        ...state,
+        cells: newCells,
+      }
+    }
     default:
       return state
   }
@@ -77,6 +97,11 @@ export const writeTargetCellNumber = (number) => ({
   type: WRITE_TARGET_CELL_NUMBER,
   number,
 })
+export const writeCellToFlipNumber = (number) => ({
+  type: WRITE_CELL_TO_FLIP_NUMBER,
+  number,
+})
 export const selectCell = (cellIndex) => ({ type: SELECT_CELL, cellIndex })
+export const flipCell = () => ({ type: FLIP_CELL })
 
 export default gameAreaReducer
