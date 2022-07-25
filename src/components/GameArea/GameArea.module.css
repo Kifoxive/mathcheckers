@@ -1,3 +1,14 @@
+.gameArea .controlContainer .btnWrapper > button, .gameArea .controlContainer .inputsWrapper > button {
+  width: 95%;
+  font-size: 2rem;
+  background-color: #9dc1b5;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.gameArea .controlContainer .btnWrapper > button:hover, .gameArea .controlContainer .inputsWrapper > button:hover {
+  background-color: transparent;
+}
+
 .gameArea {
   height: 60rem;
   display: -webkit-box;
@@ -25,4 +36,62 @@
 }
 .gameArea .boardContainer > div:nth-child(-2n+8), .gameArea .boardContainer > div:nth-child(8) ~ div:nth-child(-2n+15), .gameArea .boardContainer > div:nth-child(16) ~ div:nth-child(-2n+24), .gameArea .boardContainer > div:nth-child(24) ~ div:nth-child(-2n+31), .gameArea .boardContainer > div:nth-child(32) ~ div:nth-child(-2n+40), .gameArea .boardContainer > div:nth-child(40) ~ div:nth-child(-2n+47), .gameArea .boardContainer > div:nth-child(48) ~ div:nth-child(-2n+56), .gameArea .boardContainer > div:nth-child(56) ~ div:nth-child(-2n+63) {
   background-color: #fbf2d5;
+}
+.gameArea .controlContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 2rem;
+}
+.gameArea .controlContainer .inputsWrapper {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 22rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: #7fa99b;
+  border: 0.5rem solid #394a51;
+  font-size: 2rem;
+}
+.gameArea .controlContainer .inputsWrapper > input {
+  margin: 0 0 20px 0;
+  background-color: #9dc1b5;
+}
+.gameArea .controlContainer .btnWrapper {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 22rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: #7fa99b;
+  border: 0.5rem solid #394a51;
+  font-size: 2rem;
+}
+.gameArea .controlContainer .checkboxWrapper {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 22rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: #7fa99b;
+  border: 0.5rem solid #394a51;
+  font-size: 2rem;
+}
+.gameArea .controlContainer .checkboxWrapper input {
+  height: 2rem;
+  width: 2rem;
+}
+.gameArea .controlContainer .optionsContainer select {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 22rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: #7fa99b;
+  border: 0.5rem solid #394a51;
+  font-size: 2rem;
 }
