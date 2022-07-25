@@ -2,7 +2,7 @@
 
 ### logic game about binary code and checkers
 
-- my first React projectgi
+- my first React project
 - inspiration: https://youtu.be/hg2UkZHq_BE
 - rules: not that hard, but difficult to explain
 
