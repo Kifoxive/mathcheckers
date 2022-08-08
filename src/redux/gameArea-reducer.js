@@ -65,6 +65,7 @@ const gameAreaReducer = (state = initialState, action) => {
       let newCells = [...state.cells]
       newCells.map((value) => {
         if (value.number === state.cellToFlipNumber) {
+          console.log(value.role)
           value.role = value.role === "head" ? "tail" : "head"
         }
       })
