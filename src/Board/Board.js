@@ -33,6 +33,7 @@ class Board {
       this.cells[i].targetCell =
         this.cells[i].number === this.targetCell ? true : false
     }
+    // console.log(this.cells)
   }
 
   createRandomCheckers() {

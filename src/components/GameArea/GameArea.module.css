@@ -22,14 +22,271 @@
           align-items: center;
 }
 .gameArea .boardContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (5rem)[8];
+  grid-template-columns: repeat(8, 5rem);
+  -ms-grid-rows: (5rem)[8];
+  grid-template-rows: repeat(8, 5rem);
   height: 40rem;
   width: 40rem;
   border: 3px solid #394a51;
+}
+.gameArea .boardContainer > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+.gameArea .boardContainer > *:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+}
+.gameArea .boardContainer > *:nth-child(3) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+}
+.gameArea .boardContainer > *:nth-child(4) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+}
+.gameArea .boardContainer > *:nth-child(5) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+}
+.gameArea .boardContainer > *:nth-child(6) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 6;
+}
+.gameArea .boardContainer > *:nth-child(7) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 7;
+}
+.gameArea .boardContainer > *:nth-child(8) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 8;
+}
+.gameArea .boardContainer > *:nth-child(9) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+}
+.gameArea .boardContainer > *:nth-child(10) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+}
+.gameArea .boardContainer > *:nth-child(11) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+}
+.gameArea .boardContainer > *:nth-child(12) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+}
+.gameArea .boardContainer > *:nth-child(13) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 5;
+}
+.gameArea .boardContainer > *:nth-child(14) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 6;
+}
+.gameArea .boardContainer > *:nth-child(15) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 7;
+}
+.gameArea .boardContainer > *:nth-child(16) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 8;
+}
+.gameArea .boardContainer > *:nth-child(17) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+}
+.gameArea .boardContainer > *:nth-child(18) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+}
+.gameArea .boardContainer > *:nth-child(19) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+}
+.gameArea .boardContainer > *:nth-child(20) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 4;
+}
+.gameArea .boardContainer > *:nth-child(21) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 5;
+}
+.gameArea .boardContainer > *:nth-child(22) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 6;
+}
+.gameArea .boardContainer > *:nth-child(23) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 7;
+}
+.gameArea .boardContainer > *:nth-child(24) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 8;
+}
+.gameArea .boardContainer > *:nth-child(25) {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+}
+.gameArea .boardContainer > *:nth-child(26) {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+}
+.gameArea .boardContainer > *:nth-child(27) {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
+}
+.gameArea .boardContainer > *:nth-child(28) {
+  -ms-grid-row: 4;
+  -ms-grid-column: 4;
+}
+.gameArea .boardContainer > *:nth-child(29) {
+  -ms-grid-row: 4;
+  -ms-grid-column: 5;
+}
+.gameArea .boardContainer > *:nth-child(30) {
+  -ms-grid-row: 4;
+  -ms-grid-column: 6;
+}
+.gameArea .boardContainer > *:nth-child(31) {
+  -ms-grid-row: 4;
+  -ms-grid-column: 7;
+}
+.gameArea .boardContainer > *:nth-child(32) {
+  -ms-grid-row: 4;
+  -ms-grid-column: 8;
+}
+.gameArea .boardContainer > *:nth-child(33) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+}
+.gameArea .boardContainer > *:nth-child(34) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 2;
+}
+.gameArea .boardContainer > *:nth-child(35) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
+}
+.gameArea .boardContainer > *:nth-child(36) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 4;
+}
+.gameArea .boardContainer > *:nth-child(37) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 5;
+}
+.gameArea .boardContainer > *:nth-child(38) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 6;
+}
+.gameArea .boardContainer > *:nth-child(39) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 7;
+}
+.gameArea .boardContainer > *:nth-child(40) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 8;
+}
+.gameArea .boardContainer > *:nth-child(41) {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+}
+.gameArea .boardContainer > *:nth-child(42) {
+  -ms-grid-row: 6;
+  -ms-grid-column: 2;
+}
+.gameArea .boardContainer > *:nth-child(43) {
+  -ms-grid-row: 6;
+  -ms-grid-column: 3;
+}
+.gameArea .boardContainer > *:nth-child(44) {
+  -ms-grid-row: 6;
+  -ms-grid-column: 4;
+}
+.gameArea .boardContainer > *:nth-child(45) {
+  -ms-grid-row: 6;
+  -ms-grid-column: 5;
+}
+.gameArea .boardContainer > *:nth-child(46) {
+  -ms-grid-row: 6;
+  -ms-grid-column: 6;
+}
+.gameArea .boardContainer > *:nth-child(47) {
+  -ms-grid-row: 6;
+  -ms-grid-column: 7;
+}
+.gameArea .boardContainer > *:nth-child(48) {
+  -ms-grid-row: 6;
+  -ms-grid-column: 8;
+}
+.gameArea .boardContainer > *:nth-child(49) {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+}
+.gameArea .boardContainer > *:nth-child(50) {
+  -ms-grid-row: 7;
+  -ms-grid-column: 2;
+}
+.gameArea .boardContainer > *:nth-child(51) {
+  -ms-grid-row: 7;
+  -ms-grid-column: 3;
+}
+.gameArea .boardContainer > *:nth-child(52) {
+  -ms-grid-row: 7;
+  -ms-grid-column: 4;
+}
+.gameArea .boardContainer > *:nth-child(53) {
+  -ms-grid-row: 7;
+  -ms-grid-column: 5;
+}
+.gameArea .boardContainer > *:nth-child(54) {
+  -ms-grid-row: 7;
+  -ms-grid-column: 6;
+}
+.gameArea .boardContainer > *:nth-child(55) {
+  -ms-grid-row: 7;
+  -ms-grid-column: 7;
+}
+.gameArea .boardContainer > *:nth-child(56) {
+  -ms-grid-row: 7;
+  -ms-grid-column: 8;
+}
+.gameArea .boardContainer > *:nth-child(57) {
+  -ms-grid-row: 8;
+  -ms-grid-column: 1;
+}
+.gameArea .boardContainer > *:nth-child(58) {
+  -ms-grid-row: 8;
+  -ms-grid-column: 2;
+}
+.gameArea .boardContainer > *:nth-child(59) {
+  -ms-grid-row: 8;
+  -ms-grid-column: 3;
+}
+.gameArea .boardContainer > *:nth-child(60) {
+  -ms-grid-row: 8;
+  -ms-grid-column: 4;
+}
+.gameArea .boardContainer > *:nth-child(61) {
+  -ms-grid-row: 8;
+  -ms-grid-column: 5;
+}
+.gameArea .boardContainer > *:nth-child(62) {
+  -ms-grid-row: 8;
+  -ms-grid-column: 6;
+}
+.gameArea .boardContainer > *:nth-child(63) {
+  -ms-grid-row: 8;
+  -ms-grid-column: 7;
+}
+.gameArea .boardContainer > *:nth-child(64) {
+  -ms-grid-row: 8;
+  -ms-grid-column: 8;
 }
 .gameArea .boardContainer > div {
   background-color: #394a51;

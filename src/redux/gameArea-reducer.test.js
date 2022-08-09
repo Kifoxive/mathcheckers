@@ -1,4 +1,4 @@
-import Board from "./../Board"
+import Board from "./../Board/Board"
 import gameAreaReducer, {
   optionsOnChange,
   showCheckers,
@@ -60,12 +60,6 @@ it("should write board number", () => {
   expect(newState.boardNumber).toBe("010101 text")
 })
 
-// it("should ", () => {
-//   let action =
-//   let newState = gameAreaReducer(state, action)
-//   expect(newState.).toBe()
-// })
-
 it("should write target cell number", () => {
   let action = writeTargetCellNumber("010101 text")
   let newState = gameAreaReducer(state, action)
@@ -88,24 +82,15 @@ it("should unselect cell", () => {
   let action = selectCell(63)
   state.cells[63] = { ...state.cells[63], selected: true }
 
-  // the line above ^ looks confusing, the easiest way would be:
-  // let newState = { ...state, cells: [...state.cells, 63 = {...state.cells[63], selected: true}] }
-  // but JS spread operator doesn`t allow to get array`s element by it`s index, otherwise object can by it`s keys
-  // I tried half an hour my best to find the best solution, to keep this function still pure
-  // Okay, it didn`t need to copy every level till "selected", but still
-
   let newState = gameAreaReducer(state, action)
   expect(newState.cells[63].selected).toBe(false)
 })
 
 it("should flip cell", () => {
+  state.cells[63].role = "tail"
+  state.cellToFlipNumber = "111111"
   let action = flipCell()
 
-  let newState = { ...state }
-  let new63Cell = { ...state.cells[63] }
-  newState.cells[63] = new63Cell
-
-  newState = { ...newState, cellToFlipNumber: "111111" }
-  newState = gameAreaReducer(state, action)
+  let newState = gameAreaReducer(state, action)
   expect(newState.cells[63].role).toBe("head")
 })

@@ -1,4 +1,4 @@
-import Board from "./../Board"
+import Board from "./../Board/Board"
 
 const CHANGE_CATHEGORY = "CHANGE-CATHEGORY",
   SHOW_CHECKERS = "SHOW-CHECKERS",
@@ -55,20 +55,24 @@ const gameAreaReducer = (state = initialState, action) => {
       }
     case SELECT_CELL:
       let newCells = [...state.cells]
-      newCells[action.cellIndex].selected = !newCells[action.cellIndex].selected
+      newCells[action.cellIndex] = {
+        ...newCells[action.cellIndex],
+        selected: !newCells[action.cellIndex].selected,
+      }
+
       return {
         ...state,
-        // cells: [...state.cells, ([action.cellIndex].selected = true)],
         cells: newCells,
       }
     case FLIP_CELL: {
-      let newCells = [...state.cells]
-      newCells.map((value) => {
-        if (value.number === state.cellToFlipNumber) {
-          console.log(value.role)
-          value.role = value.role === "head" ? "tail" : "head"
-        }
-      })
+      let newCells = [
+        ...state.cells.map((cell) => {
+          if (cell.number === state.cellToFlipNumber) {
+            cell.role = cell.role === "head" ? "tail" : "head"
+          }
+          return cell
+        }),
+      ]
 
       return {
         ...state,
