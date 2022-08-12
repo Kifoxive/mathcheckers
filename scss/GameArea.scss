@@ -1,0 +1,86 @@
+$first-color: #394a51;
+$second-color: #7fa99b;
+$third-color: #fbf2d5;
+$fourth-color: #fdc57b;
+$input-background-color: #9dc1b5;
+
+@mixin input {
+  box-sizing: border-box;
+  width: 22rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: $second-color;
+  border: 0.5rem solid $first-color;
+  font-size: 2rem;
+}
+
+%btn {
+  width: 95%;
+  font-size: 2rem;
+  background-color: $input-background-color;
+  transition: 0.3s;
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+.gameArea {
+  height: 60rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  & .boardContainer {
+    display: grid;
+    grid-template-columns: repeat(8, 5rem);
+    grid-template-rows: repeat(8, 5rem);
+    height: 40rem;
+    width: 40rem;
+    border: 3px solid $first-color;
+    & > div {
+      background-color: $first-color;
+    }
+    & > div:nth-child(-2n + 8),
+    & > div:nth-child(8) ~ div:nth-child(-2n + 15),
+    & > div:nth-child(16) ~ div:nth-child(-2n + 24),
+    & > div:nth-child(24) ~ div:nth-child(-2n + 31),
+    & > div:nth-child(32) ~ div:nth-child(-2n + 40),
+    & > div:nth-child(40) ~ div:nth-child(-2n + 47),
+    & > div:nth-child(48) ~ div:nth-child(-2n + 56),
+    & > div:nth-child(56) ~ div:nth-child(-2n + 63) {
+      background-color: $third-color;
+    }
+  }
+  & .controlContainer {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    & .inputsWrapper {
+      @include input;
+      & > button {
+        @extend %btn;
+      }
+      & > input {
+        margin: 0 0 20px 0;
+        background-color: $input-background-color;
+      }
+    }
+    & .btnWrapper {
+      @include input;
+      & > button {
+        @extend %btn;
+      }
+    }
+    & .checkboxWrapper {
+      @include input;
+      & input {
+        height: 2rem;
+        width: 2rem;
+      }
+    }
+    & .optionsContainer {
+      & select {
+        @include input;
+      }
+    }
+  }
+}
