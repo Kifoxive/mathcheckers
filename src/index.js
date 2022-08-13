@@ -4,23 +4,16 @@ import "./index.css"
 import App from "./App"
 import store from "./redux/redux-store.js"
 import { Provider } from "react-redux"
-import { BrowserRouter } from "react-router-dom"
+import { HashRouter } from "react-router-dom"
 import reportWebVitals from "./reportWebVitals"
-
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>
-// );
 
 export let rerenderEntireTree = () => {
   ReactDOM.render(
-    <BrowserRouter>
+    <HashRouter>
       <Provider store={store}>
         <App />
       </Provider>
-    </BrowserRouter>,
+    </HashRouter>,
     document.getElementById("root")
   )
 }
